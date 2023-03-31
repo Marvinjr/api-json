@@ -1,0 +1,9 @@
+{
+    "name": "juan ruiz",
+    "id": 123123,
+    "email": "juan@example.com",
+    "phone": 50501212,
+    "date-birthday": "12/01/1985",
+    "gender": "male",
+    "job_title": "none"
+}
