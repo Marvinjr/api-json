@@ -1,105 +1,36 @@
 {
-  "allOf": [
-    {
-      "$ref": "#/definitions/EmployeesV2ValidateResponseBody"
-    }
-  ],
-  "definitions": {
-    "EmployeesV2ValidateResponseBody": {
-      "title": "EmployeesV2ValidateResponseBody",
-      "type": "object",
-      "properties": {
-        "message": {
-          "type": "string",
-          "description": "Mensaje del resultado de la petición."
-        },
-        "success": {
-          "type": "boolean",
-          "description": "Resultado de la petición (true | false)."
-        },
-        "result": {
-          "type": "object",
-          "properties": {
-            "employee": {
-              "type": "object",
-              "properties": {
-                "id": {
-                  "type": "integer",
-                  "description": "Identificador del empleado."
-                },
-                "email": {
-                  "type": "string",
-                  "description": "Correo electrónico del empleado."
-                },
-                "name": {
-                  "type": "string",
-                  "description": "Nombre del empleado."
-                },
-                "code": {
-                  "type": "string",
-                  "description": "Código del empleado."
-                },
-                "companyId": {
-                  "type": "integer",
-                  "description": "Identificador de la empresa a la que pertenece el empleado."
-                },
-                "active": {
-                  "type": "integer",
-                  "description": "Estado del empleado."
-                }
-              }
-            },
-            "availableProducts": {
-              "type": "array",
-              "items": {
-                "$ref": "#/definitions/DefaultProductsObject"
-              }
-            }
-          }
-        }
-      },
-      "required": [
-        "success",
-        "message",
-        "result"
-      ]
+  "success": true,
+  "message": "Ok",
+  "result": {
+    "employee": {
+      "id": 1,
+      "email": "jhon.doe@gmail.com",
+      "name": "Jhon Doe",
+      "code": "0001",
+      "companyId": 1,
+      "active": 1
     },
-    "DefaultProductsObject": {
-      "type": "object",
-      "properties": {
-        "id": {
-          "type": "integer",
-          "description": "Identificador del producto."
-        },
-        "name": {
-          "type": "string",
-          "description": "Nombre del producto."
-        },
-        "price": {
-          "type": "integer",
-          "description": "Precio del producto."
-        },
-        "discount_price": {
-          "type": "integer",
-          "description": "Indica el precio de descuento del producto (se muestra únicamente si el producto tiene descuento)."
-        },
-        "description": {
-          "type": "string",
-          "description": "Descripción del producto."
-        },
-        "price_type": {
-          "type": "integer",
-          "description": "Tipo de producto (0 = cupón, 1 = gift card)."
-        },
-        "quantity": {
-          "type": "string",
-          "description": "Cantidad disponible del producto."
-        },
-        "available_amount": {
-          "type": "number",
-          "description": "Costo del producto."
-        }
+    "availableProducts": [
+      {
+        "id": 1,
+        "name": "Vale Compañia 1",
+        "price": 35,
+        "discount_price": 100,
+        "description": "Vale por Q35",
+        "price_type": 1,
+        "quantity": 290,
+        "available_amount": 300
+      },
+      {
+        "id": 4,
+        "name": "Cena Comercio 1",
+        "price": 5,
+        "discount_price": 0,
+        "description": "Cupón por Q35",
+        "price_type": 0,
+        "quantity": 20,
+        "available_amount": 50
       }
-    }
+    ]
   }
 }
